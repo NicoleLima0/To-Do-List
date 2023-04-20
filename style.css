@@ -7,13 +7,14 @@
   }
   
   body {
-    background-image: url("../img/bg.jpg");
+    /* background-image: url("../img/bg.jpg"); */
+    background-color: #395169;
     background-position: center;
     background-size: cover;
   }
   
   button {
-    background-color: #fdfdfd;
+    background-color: #ffffff;
     color: #102f5e;
     border: 2px solid #102f5e;
     padding: 0.3rem 0.6rem;
