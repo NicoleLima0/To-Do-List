@@ -1,12 +1,12 @@
-const todoForm = document.querySelector("#todo-form");//
-const todoInput = document.querySelector("#todo-input");//adiciona tarefas
-const todoList = document.querySelector("#todo-list");//inclui novas tarefas
-const editForm = document.querySelector("#edit-form");//formulário de edição
-const editInput = document.querySelector("#edit-input");//campo de edição
-const cancelEditBtn = document.querySelector("#cancel-edit-btn");//cancelar edição
-const searchInput = document.querySelector("#search-input");
-const eraseBtn = document.querySelector("#erase-button");
-const filterBtn = document.querySelector("#filter-select");
+const todoForm = document.getElementById("todo-form");//
+const todoInput = document.getElementById("todo-input");//adiciona tarefas
+const todoList = document.getElementById("todo-list");//inclui novas tarefas
+const editForm = document.getElementById("edit-form");//formulário de edição
+const editInput = document.getElementById("edit-input");//campo de edição
+const cancelEditBtn = document.getElementById("cancel-edit-btn");//cancelar edição
+const searchInput = document.getElementById("search-input");
+const eraseBtn = document.getElementById("erase-button");
+const filterBtn = document.getElementById("filter-select");
 
 let oldInputValue;
 
@@ -59,7 +59,7 @@ const updateTodo = (text) => {
 
   todos.forEach((todo) => {
     let todoTitle = todo.querySelector("h3");
-
+    //comparação para saber se é o mesmo valor
     if (todoTitle.innerText === oldInputValue) {
       todoTitle.innerText = text;
 
@@ -130,9 +130,10 @@ e.preventDefault();//Para que o formulário não seja enviado para o back-end.
 
 document.addEventListener("click", (e) => {
   const targetEl = e.target;
-  const parentEl = targetEl.closest("div");
+  const parentEl = targetEl.closest("div");//elemento pai, div mais próxima
   let todoTitle;
-
+ 
+  //
   if (parentEl && parentEl.querySelector("h3")) {
     todoTitle = parentEl.querySelector("h3").innerText || "";
   }
@@ -168,7 +169,7 @@ editForm.addEventListener("submit", (e) => {
 
   const editInputValue = editInput.value;
 
-  if (editInputValue) {
+  if (editInputValue) {  //atualizar
     updateTodo(editInputValue);
   }
 
