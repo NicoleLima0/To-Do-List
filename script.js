@@ -21,17 +21,17 @@ const saveTodo = (text, done = 0, save = 1) => {
   //criando os botões
   const doneBtn = document.createElement("button");
   doneBtn.classList.add("finish-todo");
-  doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>';//inserindo o ícone
+  doneBtn.innerHTML = '<i class="fa-solid fa-check" style="color: #f5f5f5;"></i>';//inserindo o ícone
   todo.appendChild(doneBtn);
 
   const editBtn = document.createElement("button");
   editBtn.classList.add("edit-todo");
-  editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+  editBtn.innerHTML = '<i class="fa-solid fa-pen" style="color: #f5f5f5;"></i>';
   todo.appendChild(editBtn);
 
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("remove-todo");
-  deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+  deleteBtn.innerHTML = '<i class="fa-solid fa-trash-can" style="color: #f5f5f5;"></i>';
   todo.appendChild(deleteBtn);
 
   // Utilizando dados da localStorage
